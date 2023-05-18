@@ -79,9 +79,7 @@ const onOptionSelected = (option: ItemOptions) => {
 const onClickOutside = (e: Event) => {
   if (!(e?.target as HTMLElement).closest('.combobox')) {
     hide();
-    if (!props.value) {
-      search.value = ''
-    } 
+    search.value = currentInputValue.value
   }
 };
 
@@ -273,6 +271,9 @@ ul {
 
 .combobox-menu__option {
   padding: 10px 12px 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   cursor: pointer;
 }
 
