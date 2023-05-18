@@ -79,6 +79,9 @@ const onOptionSelected = (option: ItemOptions) => {
 const onClickOutside = (e: Event) => {
   if (!(e?.target as HTMLElement).closest('.combobox')) {
     hide();
+    if (!props.value) {
+      search.value = ''
+    } 
   }
 };
 
